@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neema Peter | Student 77366</title>
+</head>
+
+<body>
+
+<section id="section">
+
+    <h2>Background colour: <span id="bg-color">#ffffff</span></h2>
+
+    <button id="change-color">Click me</button>
+
+</section>
+
+
+<script>
+
+const btncolour = document.getElementById('change-color');
+const boxdisplay = document.getElementById('bg-color');
+const bigsection = document.getElementById('section');
+
+btncolour.addEventListener('click', () => {
+
+    let strHexColour = '#';
+    const addhex = [0,1,2,3,4,5,6,7,8,9,'A','B','C','D','E','F'];
+
+    for (let i = 0; i < 6; i++) {
+        strHexColour += addhex[getRandomNumber(addhex.length)];
+    }
+
+    boxdisplay.innerText = strHexColour;
+    bigsection.style.backgroundColor = strHexColour;
+
+});
+
+function getRandomNumber(max){
+    return Math.floor(Math.random() * max);
+}
+
+</script>
+
+</body>
+</html>
